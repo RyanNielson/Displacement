@@ -17,19 +17,19 @@ public class Player : MonoBehaviour
     void Update()
     {
         // Maybe put this in the piece logic.
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             piece.board.MovePiece(piece, piece.logicalPosition + new Vector3Int(0, 0, 1));
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             piece.board.MovePiece(piece, piece.logicalPosition + new Vector3Int(0, 0, -1));
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             piece.board.MovePiece(piece, piece.logicalPosition + Vector3Int.right);
         }
-        else if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             piece.board.MovePiece(piece, piece.logicalPosition + Vector3Int.left);
         }
