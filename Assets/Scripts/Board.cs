@@ -70,7 +70,7 @@ public class Board : MonoBehaviour
             Piece pieceBelowPrevious = null;
             if (pieces.TryGetValue(previousPosition + new Vector3Int(0, -1, 0), out pieceBelowPrevious))
             {
-                pieceBelowPrevious.movedOff.Invoke(piece);
+                // pieceBelowPrevious.movedOff.Invoke(piece);
             }
 
             Piece pieceBelowTarget = null;
@@ -81,10 +81,18 @@ public class Board : MonoBehaviour
                 piece.logicalPosition = target;
                 pieces.Add(target, piece);
                 pieceBelowTarget.movedOn.Invoke(piece);
+                pieceBelowPrevious.movedOff.Invoke(piece);
 
                 // piece.transform.position = target;
 
-                piece.transform.DOMove(target, .25f).SetEase(Ease.OutExpo);
+                if (piece.movementType == MovementType.Teleport)
+                {
+                    piece.transform.position = target;
+                }
+                else if (piece.movementType == MovementType.Slide)
+                {
+                    piece.transform.DOMove(target, .25f).SetEase(Ease.OutExpo);
+                }
 
                 return true;
             }
@@ -191,4 +199,10 @@ public enum Direction
     Backward,
     Right,
     Left
+}
+
+public enum MovementType
+{
+    Teleport,
+    Slide
 }

@@ -312,10 +312,14 @@ MonoBehaviour:
   pushable: 0
   logicalPosition: {x: 0, y: 0, z: 0}
   board: {fileID: 0}
-  movedAbove:
+  canTriggerLevelComplete: 1
+  movementType: 1
+  movedOn:
     m_PersistentCalls:
       m_Calls: []
-  canTriggerLevelComplete: 1
+  movedOff:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6148383504308992482
 MonoBehaviour:
   m_ObjectHideFlags: 0

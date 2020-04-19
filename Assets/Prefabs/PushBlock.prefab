@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5232632397387095785}
   - component: {fileID: -644115009069189518}
   m_Layer: 0
-  m_Name: Block
+  m_Name: PushBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -672,3 +672,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pushable: 1
   logicalPosition: {x: 0, y: 0, z: 0}
+  board: {fileID: 0}
+  canTriggerLevelComplete: 0
+  movementType: 1
+  movedOn:
+    m_PersistentCalls:
+      m_Calls: []
+  movedOff:
+    m_PersistentCalls:
+      m_Calls: []

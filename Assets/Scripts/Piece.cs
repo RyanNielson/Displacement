@@ -14,10 +14,15 @@ public class Piece : MonoBehaviour
     public Vector3Int logicalPosition = Vector3Int.zero;
     public Board board;
 
+    public bool canTriggerLevelComplete;
+
+    public MovementType movementType = MovementType.Teleport;
+
     public MovedAboveEvent movedOn;
 
     public MovedAboveEvent movedOff;
 
-    public bool canTriggerLevelComplete;
+    public UnityEvent activated;
 
+    public UnityEvent deactived;
 }

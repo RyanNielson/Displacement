@@ -312,6 +312,8 @@ MonoBehaviour:
   pushable: 0
   logicalPosition: {x: 0, y: 0, z: 0}
   board: {fileID: 0}
+  canTriggerLevelComplete: 0
+  movementType: 0
   movedOn:
     m_PersistentCalls:
       m_Calls:
@@ -329,7 +331,12 @@ MonoBehaviour:
   movedOff:
     m_PersistentCalls:
       m_Calls: []
-  canTriggerLevelComplete: 0
+  activated:
+    m_PersistentCalls:
+      m_Calls: []
+  deactived:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &-1799655796101000395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,3 +350,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevel: 
+  requiredActivatedCount: 0
+  activatedMaterial: {fileID: 2100000, guid: 575293193d0d5224e82b0e8c00f49d14, type: 2}
+  deactivatedMaterial: {fileID: 2100000, guid: 955d992218fc37646a61a8459ac18df1, type: 2}
