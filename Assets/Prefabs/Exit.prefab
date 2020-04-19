@@ -312,7 +312,7 @@ MonoBehaviour:
   pushable: 0
   logicalPosition: {x: 0, y: 0, z: 0}
   board: {fileID: 0}
-  movedAbove:
+  movedOn:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -1799655796101000395}
@@ -326,6 +326,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  movedOff:
+    m_PersistentCalls:
+      m_Calls: []
+  canTriggerLevelComplete: 0
 --- !u!114 &-1799655796101000395
 MonoBehaviour:
   m_ObjectHideFlags: 0

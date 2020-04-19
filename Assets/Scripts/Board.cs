@@ -67,6 +67,12 @@ public class Board : MonoBehaviour
         }
         else
         {
+            Piece pieceBelowPrevious = null;
+            if (pieces.TryGetValue(previousPosition + new Vector3Int(0, -1, 0), out pieceBelowPrevious))
+            {
+                pieceBelowPrevious.movedOff.Invoke(piece);
+            }
+
             Piece pieceBelowTarget = null;
             if (pieces.TryGetValue(target + new Vector3Int(0, -1, 0), out pieceBelowTarget))
             {
@@ -74,7 +80,7 @@ public class Board : MonoBehaviour
                 pieces.Remove(previousPosition);
                 piece.logicalPosition = target;
                 pieces.Add(target, piece);
-                pieceBelowTarget.movedAbove.Invoke(piece);
+                pieceBelowTarget.movedOn.Invoke(piece);
 
                 // piece.transform.position = target;
 

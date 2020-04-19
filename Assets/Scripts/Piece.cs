@@ -14,7 +14,9 @@ public class Piece : MonoBehaviour
     public Vector3Int logicalPosition = Vector3Int.zero;
     public Board board;
 
-    public MovedAboveEvent movedAbove;
+    public MovedAboveEvent movedOn;
+
+    public MovedAboveEvent movedOff;
 
     public bool canTriggerLevelComplete;
 
