@@ -8,7 +8,9 @@ public class LevelComplete : MonoBehaviour
     public string nextLevel = "";
     public void CompleteLevel(Piece piece)
     {
-        Debug.Log("Level Complete: " + piece.name);
-        SceneManager.LoadScene(nextLevel);
+        if (piece.canTriggerLevelComplete)
+        {
+            SceneManager.LoadScene(nextLevel);
+        }
     }
 }

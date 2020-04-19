@@ -16,4 +16,6 @@ public class Piece : MonoBehaviour
 
     public MovedAboveEvent movedAbove;
 
+    public bool canTriggerLevelComplete;
+
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // TODO: Maybe this can just be a special type of block or something.
 public class Player : MonoBehaviour
@@ -102,6 +103,14 @@ public class Player : MonoBehaviour
 
             List<Piece> piecesLeft = piece.board.PushablePiecesInDirection(piece, Direction.Left);
             piece.board.MovePieces(piecesLeft, new Vector3Int(-1, 0, 0));
+        }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
         }
     }
 }
