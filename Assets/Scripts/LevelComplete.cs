@@ -9,7 +9,7 @@ public class LevelComplete : MonoBehaviour
 
     private int activatedCount = 0;
 
-    public int requiredActivatedCount = 0;
+    private int requiredActivatedCount = 0;
 
     public Material activatedMaterial;
     public Material deactivatedMaterial;
@@ -25,6 +25,12 @@ public class LevelComplete : MonoBehaviour
         else
         {
             GetComponent<MeshRenderer>().material = activatedMaterial;
+        }
+
+        foreach (PushSwitch swi in switches)
+        {
+            swi.attachedLevelComplete = this;
+
         }
     }
 
