@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Board : MonoBehaviour
 {
@@ -73,9 +74,11 @@ public class Board : MonoBehaviour
                 pieces.Remove(previousPosition);
                 piece.logicalPosition = target;
                 pieces.Add(target, piece);
-                piece.transform.position = target;
-
                 pieceBelowTarget.movedAbove.Invoke(piece);
+
+                // piece.transform.position = target;
+
+                piece.transform.DOMove(target, .25f).SetEase(Ease.OutExpo);
 
                 return true;
             }

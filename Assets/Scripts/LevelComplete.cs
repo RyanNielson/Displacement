@@ -10,7 +10,13 @@ public class LevelComplete : MonoBehaviour
     {
         if (piece.canTriggerLevelComplete)
         {
-            SceneManager.LoadScene(nextLevel);
+            StartCoroutine(SwitchLevel());
         }
+    }
+
+    IEnumerator SwitchLevel()
+    {
+        yield return new WaitForSeconds(.5f);
+        SceneManager.LoadScene(nextLevel);
     }
 }
