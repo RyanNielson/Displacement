@@ -18,6 +18,12 @@ public class ActionCounter : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("LIMIT MOVES");
+        Debug.Log(ConfigManager.limitMoves);
+        if (!ConfigManager.limitMoves)
+        {
+            Destroy(gameObject);
+        }
         text.text = maximumActions.ToString();
     }
 
@@ -29,7 +35,7 @@ public class ActionCounter : MonoBehaviour
             Player player = GameObject.FindObjectOfType<Player>();
             player.canMove = false;
 
-            text.text = "PRESS R TO RESTART";
+            text.text = "PRESS R TO RESET";
             text.color = Color.red;
         }
     }

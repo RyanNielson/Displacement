@@ -54,6 +54,9 @@ public class LevelComplete : MonoBehaviour
     {
         if (piece.canTriggerLevelComplete && activatedCount >= requiredActivatedCount)
         {
+            Player player = GameObject.FindObjectOfType<Player>();
+            player.canMove = false;
+
             StartCoroutine(SwitchLevel());
         }
     }
@@ -61,6 +64,9 @@ public class LevelComplete : MonoBehaviour
     IEnumerator SwitchLevel()
     {
         yield return new WaitForSeconds(.5f);
-        SceneManager.LoadScene(nextLevel);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        // SceneManager.GetActiveScene().buildIndex + 1;
+        // SceneManager.LoadScene(nextLevel);
+
     }
 }
