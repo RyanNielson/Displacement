@@ -4564,11 +4564,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: Instructions
       objectReference: {fileID: 0}
+    - target: {fileID: 8854328348144109458, guid: 3c3888ad6f9243440af5f345f14b720e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8854328348144109458, guid: 3c3888ad6f9243440af5f345f14b720e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -64
+      objectReference: {fileID: 0}
+    - target: {fileID: 8854328348144109458, guid: 3c3888ad6f9243440af5f345f14b720e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8854328348144109458, guid: 3c3888ad6f9243440af5f345f14b720e,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -64
+      objectReference: {fileID: 0}
     - target: {fileID: 8854328348144109485, guid: 3c3888ad6f9243440af5f345f14b720e,
         type: 3}
       propertyPath: m_Text
-      value: YOU ONLY HAVE ENOUGH ENERGY THE NUMBER OF ACTIONS SHOWN IN THE BOTTOM
-        RIGHT. WHEN THIS HITS 0, THE LEVEL WILL BE NEED TO BE RESET.
+      value: "YOU ONLY HAVE ENOUGH ENERGY THE NUMBER OF ACTIONS SHOWN IN THE BOTTOM
+        RIGHT. WHEN THIS HITS 0, THE LEVEL WILL BE NEED TO BE RESET. \n\nTHIS CAN
+        BE DISABLED ON THE TITLE SCREEN"
       objectReference: {fileID: 0}
     - target: {fileID: 8854328348144109485, guid: 3c3888ad6f9243440af5f345f14b720e,
         type: 3}

@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Alien.unity
     guid: 694ddc3ed32ed0943b847d4edbeb15e5
   - enabled: 1
+    path: Assets/Scenes/Around.unity
+    guid: f49c67e01814b424faaafc5c4d24f697
+  - enabled: 1
     path: Assets/Scenes/End.unity
     guid: ac18baf2d5083ff49bf0465dcc88ccb5
   m_configObjects: {}
