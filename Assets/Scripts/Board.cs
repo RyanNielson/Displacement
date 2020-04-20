@@ -55,7 +55,7 @@ public class Board : MonoBehaviour
     //     }
     // }
 
-    public bool MovePiece(Piece piece, Vector3Int target)
+    private bool MovePiece(Piece piece, Vector3Int target)
     {
         Debug.Log("Move requested: " + piece.name + " from " + piece.logicalPosition + " to " + target);
         Vector3Int previousPosition = piece.logicalPosition;

@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: 62fe442d8a4e1714996019956601dacc
+  - enabled: 1
     path: Assets/Scenes/Level01.unity
     guid: 388ccfd975ea4284e9a05b5b97812b19
   - enabled: 1
@@ -29,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Alien.unity
     guid: 694ddc3ed32ed0943b847d4edbeb15e5
+  - enabled: 1
+    path: Assets/Scenes/LongPushAndPull.unity
+    guid: 0b1f41ae250f1d84583678021f3d8fbc
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: ac18baf2d5083ff49bf0465dcc88ccb5
   m_configObjects: {}

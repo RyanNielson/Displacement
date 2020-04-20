@@ -8,32 +8,54 @@ public class Player : MonoBehaviour
 {
     Piece piece;
 
+    private ActionCounter actionCounter;
+
+    public bool canMove = true;
+
     // Start is called before the first frame update
     void Start()
     {
         piece = GetComponent<Piece>();
+        actionCounter = GameObject.FindObjectOfType<ActionCounter>();
     }
 
     void Update()
     {
         // Maybe put this in the piece logic.
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        if (canMove && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
         {
-            piece.board.MovePiece(piece, piece.logicalPosition + new Vector3Int(0, 0, 1));
+            // piece.board.MovePiece(piece, piece.logicalPosition + new Vector3Int(0, 0, 1));
+
+            List<Piece> moveList = new List<Piece>();
+            moveList.Add(piece);
+            piece.board.MovePieces(moveList, new Vector3Int(0, 0, 1));
+            actionCounter.IncrementActions();
         }
-        else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        else if (canMove && (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)))
         {
-            piece.board.MovePiece(piece, piece.logicalPosition + new Vector3Int(0, 0, -1));
+            // piece.board.MovePiece(piece, piece.logicalPosition + new Vector3Int(0, 0, -1));
+            List<Piece> moveList = new List<Piece>();
+            moveList.Add(piece);
+            piece.board.MovePieces(moveList, new Vector3Int(0, 0, -1));
+            actionCounter.IncrementActions();
         }
-        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        else if (canMove && (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)))
         {
-            piece.board.MovePiece(piece, piece.logicalPosition + Vector3Int.right);
+            // piece.board.MovePiece(piece, piece.logicalPosition + Vector3Int.right);
+            List<Piece> moveList = new List<Piece>();
+            moveList.Add(piece);
+            piece.board.MovePieces(moveList, Vector3Int.right);
+            actionCounter.IncrementActions();
         }
-        else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        else if (canMove && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)))
         {
-            piece.board.MovePiece(piece, piece.logicalPosition + Vector3Int.left);
+            // piece.board.MovePiece(piece, piece.logicalPosition + Vector3Int.left);
+            List<Piece> moveList = new List<Piece>();
+            moveList.Add(piece);
+            piece.board.MovePieces(moveList, Vector3Int.left);
+            actionCounter.IncrementActions();
         }
-        else if (Input.GetKeyDown(KeyCode.Q))
+        else if (canMove && (Input.GetKeyDown(KeyCode.Q)))
         {
             // Pull
             List<Piece> piecesForward = piece.board.PushablePiecesInDirection(piece, Direction.Forward);
@@ -64,8 +86,10 @@ public class Player : MonoBehaviour
             // {
             //     piece.board.MovePiece(piece, piece.logicalPosition + new Vector3Int(1, 0, 0));
             // }
+
+            actionCounter.IncrementActions();
         }
-        else if (Input.GetKeyDown(KeyCode.E))
+        else if (canMove && (Input.GetKeyDown(KeyCode.E)))
         {
             // Push
             // List<Piece> piecesForward = piece.board.PushablePiecesInDirection(piece, Direction.Forward);
@@ -103,6 +127,8 @@ public class Player : MonoBehaviour
 
             List<Piece> piecesLeft = piece.board.PushablePiecesInDirection(piece, Direction.Left);
             piece.board.MovePieces(piecesLeft, new Vector3Int(-1, 0, 0));
+
+            actionCounter.IncrementActions();
         }
         else if (Input.GetKeyDown(KeyCode.R))
         {
