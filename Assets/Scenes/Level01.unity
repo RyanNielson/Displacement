@@ -8313,7 +8313,7 @@ PrefabInstance:
     - target: {fileID: 8854328348144109485, guid: 3c3888ad6f9243440af5f345f14b720e,
         type: 3}
       propertyPath: m_Text
-      value: "WASD OR ARROWS TO MOVE \nTO THE GREEN EXIT\nR TO RESET, Q TO QUIT"
+      value: "WASD OR ARROWS TO MOVE \nTO THE GREEN EXIT\nR TO RESET, ESC TO QUIT"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c3888ad6f9243440af5f345f14b720e, type: 3}
