@@ -4453,12 +4453,17 @@ PrefabInstance:
     - target: {fileID: 2321633273646642141, guid: 90418b5a40346b44fa7d2ba88f6e3b30,
         type: 3}
       propertyPath: maximumActions
-      value: 55
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4778663692903982931, guid: 90418b5a40346b44fa7d2ba88f6e3b30,
         type: 3}
       propertyPath: m_Name
       value: MovesCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 4778663692903982931, guid: 90418b5a40346b44fa7d2ba88f6e3b30,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4778663692903982943, guid: 90418b5a40346b44fa7d2ba88f6e3b30,
         type: 3}
@@ -4478,7 +4483,7 @@ PrefabInstance:
     - target: {fileID: 4778663692903982943, guid: 90418b5a40346b44fa7d2ba88f6e3b30,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 36.71
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 4778663692903982943, guid: 90418b5a40346b44fa7d2ba88f6e3b30,
         type: 3}
@@ -4519,6 +4524,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4778663692903982943, guid: 90418b5a40346b44fa7d2ba88f6e3b30,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4778663692903982943, guid: 90418b5a40346b44fa7d2ba88f6e3b30,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 4778663692903982943, guid: 90418b5a40346b44fa7d2ba88f6e3b30,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90418b5a40346b44fa7d2ba88f6e3b30, type: 3}

@@ -3337,7 +3337,7 @@ PrefabInstance:
     - target: {fileID: 4778663692903982943, guid: 90418b5a40346b44fa7d2ba88f6e3b30,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.3149037
+      value: 0.38268343
       objectReference: {fileID: 0}
     - target: {fileID: 4778663692903982943, guid: 90418b5a40346b44fa7d2ba88f6e3b30,
         type: 3}
@@ -3352,7 +3352,7 @@ PrefabInstance:
     - target: {fileID: 4778663692903982943, guid: 90418b5a40346b44fa7d2ba88f6e3b30,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9491236
+      value: 0.92387956
       objectReference: {fileID: 0}
     - target: {fileID: 4778663692903982943, guid: 90418b5a40346b44fa7d2ba88f6e3b30,
         type: 3}
@@ -3362,7 +3362,7 @@ PrefabInstance:
     - target: {fileID: 4778663692903982943, guid: 90418b5a40346b44fa7d2ba88f6e3b30,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 36.71
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 4778663692903982943, guid: 90418b5a40346b44fa7d2ba88f6e3b30,
         type: 3}
@@ -3382,7 +3382,7 @@ PrefabInstance:
     - target: {fileID: 4778663692903982943, guid: 90418b5a40346b44fa7d2ba88f6e3b30,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4778663692903982943, guid: 90418b5a40346b44fa7d2ba88f6e3b30,
         type: 3}
@@ -4472,7 +4472,7 @@ PrefabInstance:
     - target: {fileID: 8854328347041668405, guid: 3c3888ad6f9243440af5f345f14b720e,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.38268343
       objectReference: {fileID: 0}
     - target: {fileID: 8854328347041668405, guid: 3c3888ad6f9243440af5f345f14b720e,
         type: 3}
@@ -4487,7 +4487,7 @@ PrefabInstance:
     - target: {fileID: 8854328347041668405, guid: 3c3888ad6f9243440af5f345f14b720e,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.92387956
       objectReference: {fileID: 0}
     - target: {fileID: 8854328347041668405, guid: 3c3888ad6f9243440af5f345f14b720e,
         type: 3}
@@ -4497,7 +4497,7 @@ PrefabInstance:
     - target: {fileID: 8854328347041668405, guid: 3c3888ad6f9243440af5f345f14b720e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 8854328347041668405, guid: 3c3888ad6f9243440af5f345f14b720e,
         type: 3}
@@ -4517,7 +4517,7 @@ PrefabInstance:
     - target: {fileID: 8854328347041668405, guid: 3c3888ad6f9243440af5f345f14b720e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8854328347041668405, guid: 3c3888ad6f9243440af5f345f14b720e,
         type: 3}
@@ -4587,9 +4587,12 @@ PrefabInstance:
     - target: {fileID: 8854328348144109485, guid: 3c3888ad6f9243440af5f345f14b720e,
         type: 3}
       propertyPath: m_Text
-      value: "YOU ONLY HAVE ENOUGH ENERGY THE NUMBER OF ACTIONS SHOWN IN THE BOTTOM
-        RIGHT. WHEN THIS HITS 0, THE LEVEL WILL BE NEED TO BE RESET. \n\nTHIS CAN
-        BE DISABLED ON THE TITLE SCREEN"
+      value: 'YOUR ENERGY IS LIMITED! THE COUNTER IN THE BOTTOM RIGHT OF THE SCREEN
+        INDICATES HOW MANY MOVES YOU HAVE LEFT TO COMPLETE EACH PUZZLE.
+
+
+        THIS
+        CAN BE DISABLED ON THE TITLE SCREEN TO MAKE THINGS EASIER.'
       objectReference: {fileID: 0}
     - target: {fileID: 8854328348144109485, guid: 3c3888ad6f9243440af5f345f14b720e,
         type: 3}

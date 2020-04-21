@@ -8,6 +8,8 @@ public class ActionCounter : MonoBehaviour
     public int maximumActions = 1;
     public int actionsSoFar = 0;
 
+    public AudioClip limitAudio;
+
     // public
 
     // public TextMesh text;
@@ -16,27 +18,33 @@ public class ActionCounter : MonoBehaviour
 
     public bool triggered = false;
 
+    AudioSource audioSource;
+
     void Start()
     {
-        Debug.Log("LIMIT MOVES");
-        Debug.Log(ConfigManager.limitMoves);
+        text.text = maximumActions.ToString();
+        audioSource = GetComponent<AudioSource>();
         if (!ConfigManager.limitMoves)
         {
             Destroy(gameObject);
         }
-        text.text = maximumActions.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (maximumActions - actionsSoFar <= 0 && !triggered)
+        Player player = GameObject.FindObjectOfType<Player>();
+
+        // player.canMove = false;
+        if (!player.hasWon && maximumActions - actionsSoFar <= 0 && !triggered)
         {
-            Player player = GameObject.FindObjectOfType<Player>();
+            // Player player = GameObject.FindObjectOfType<Player>();
             player.canMove = false;
 
             text.text = "PRESS R TO RESET";
             text.color = Color.red;
+            triggered = true;
+            audioSource.PlayOneShot(limitAudio);
         }
     }
 

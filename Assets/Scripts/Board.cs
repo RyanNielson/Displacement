@@ -30,34 +30,9 @@ public class Board : MonoBehaviour
         }
     }
 
-    // Eventually might have to allow submission of multiple moves in a single item.
-    // public bool MovePiece(Piece piece, Vector3Int target)
-    // {
-    //     Debug.Log("Move requested: " + piece.name + " from " + piece.logicalPosition + " to " + target);
-    //     Vector3Int previousPosition = piece.logicalPosition;
-
-    //     Piece pieceAtTarget = null;
-    //     if (pieces.TryGetValue(target, out pieceAtTarget))
-    //     {
-    //         // There is a piece.
-    //     }
-    //     else
-    //     {
-    //         Piece pieceBelowTarget = null;
-    //         if (pieces.TryGetValue(target + new Vector3Int(0, -1, 0), out pieceBelowTarget))
-    //         {
-    //             // There is a piece.
-    //             pieces.Remove(previousPosition);
-    //             piece.logicalPosition = target;
-    //             pieces.Add(target, piece);
-    //             piece.transform.position = target;
-    //         }
-    //     }
-    // }
-
     private bool MovePiece(Piece piece, Vector3Int target)
     {
-        Debug.Log("Move requested: " + piece.name + " from " + piece.logicalPosition + " to " + target);
+        // Debug.Log("Move requested: " + piece.name + " from " + piece.logicalPosition + " to " + target);
         Vector3Int previousPosition = piece.logicalPosition;
 
         Piece pieceAtTarget = null;

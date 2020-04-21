@@ -14,8 +14,17 @@ public class LevelComplete : MonoBehaviour
     public Material activatedMaterial;
     public Material deactivatedMaterial;
 
+    public AudioClip activatedSound;
+    public AudioClip deactivatedSound;
+
+    public AudioClip exitSound;
+
+    private AudioSource audioSource;
+
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         PushSwitch[] switches = GameObject.FindObjectsOfType<PushSwitch>();
         requiredActivatedCount = switches.Length;
         if (activatedCount < requiredActivatedCount)
@@ -41,11 +50,16 @@ public class LevelComplete : MonoBehaviour
         if (activatedCount >= requiredActivatedCount)
         {
             GetComponent<MeshRenderer>().material = activatedMaterial;
+            audioSource.PlayOneShot(activatedSound);
         }
     }
 
     public void Deactivate()
     {
+        if (activatedCount >= requiredActivatedCount)
+        {
+            audioSource.PlayOneShot(deactivatedSound);
+        }
         activatedCount--;
         GetComponent<MeshRenderer>().material = deactivatedMaterial;
     }
@@ -56,6 +70,7 @@ public class LevelComplete : MonoBehaviour
         {
             Player player = GameObject.FindObjectOfType<Player>();
             player.canMove = false;
+            player.hasWon = true;
 
             StartCoroutine(SwitchLevel());
         }
@@ -63,7 +78,8 @@ public class LevelComplete : MonoBehaviour
 
     IEnumerator SwitchLevel()
     {
-        yield return new WaitForSeconds(.5f);
+        audioSource.PlayOneShot(exitSound);
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         // SceneManager.GetActiveScene().buildIndex + 1;
         // SceneManager.LoadScene(nextLevel);
