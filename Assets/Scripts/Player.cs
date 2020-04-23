@@ -30,8 +30,8 @@ public class Player : MonoBehaviour
 
             List<Piece> moveList = new List<Piece>();
             moveList.Add(piece);
-            piece.board.MovePieces(moveList, new Vector3Int(0, 0, 1));
-            if (actionCounter)
+            bool somethingMoved = piece.board.MovePieces(moveList, new Vector3Int(0, 0, 1));
+            if (actionCounter && somethingMoved)
             {
                 actionCounter.IncrementActions();
             }
@@ -41,8 +41,8 @@ public class Player : MonoBehaviour
             // piece.board.MovePiece(piece, piece.logicalPosition + new Vector3Int(0, 0, -1));
             List<Piece> moveList = new List<Piece>();
             moveList.Add(piece);
-            piece.board.MovePieces(moveList, new Vector3Int(0, 0, -1));
-            if (actionCounter)
+            bool somethingMoved = piece.board.MovePieces(moveList, new Vector3Int(0, 0, -1));
+            if (actionCounter && somethingMoved)
             {
                 actionCounter.IncrementActions();
             }
@@ -52,8 +52,8 @@ public class Player : MonoBehaviour
             // piece.board.MovePiece(piece, piece.logicalPosition + Vector3Int.right);
             List<Piece> moveList = new List<Piece>();
             moveList.Add(piece);
-            piece.board.MovePieces(moveList, Vector3Int.right);
-            if (actionCounter)
+            bool somethingMoved = piece.board.MovePieces(moveList, Vector3Int.right);
+            if (actionCounter && somethingMoved)
             {
                 actionCounter.IncrementActions();
             }
@@ -63,8 +63,8 @@ public class Player : MonoBehaviour
             // piece.board.MovePiece(piece, piece.logicalPosition + Vector3Int.left);
             List<Piece> moveList = new List<Piece>();
             moveList.Add(piece);
-            piece.board.MovePieces(moveList, Vector3Int.left);
-            if (actionCounter)
+            bool somethingMoved = piece.board.MovePieces(moveList, Vector3Int.left);
+            if (actionCounter && somethingMoved)
             {
                 actionCounter.IncrementActions();
             }
@@ -72,40 +72,42 @@ public class Player : MonoBehaviour
         else if (canMove && (Input.GetKeyDown(KeyCode.Q)))
         {
             // Pull
+            bool somethingMoved = false;
+
             List<Piece> piecesForward = piece.board.PushablePiecesInDirection(piece, Direction.Forward);
-            piece.board.MovePieces(piecesForward, new Vector3Int(0, 0, -1));
+            somethingMoved = piece.board.MovePieces(piecesForward, new Vector3Int(0, 0, -1)) || somethingMoved;
 
             List<Piece> piecesBackward = piece.board.PushablePiecesInDirection(piece, Direction.Backward);
-            piece.board.MovePieces(piecesBackward, new Vector3Int(0, 0, 1));
+            somethingMoved = piece.board.MovePieces(piecesBackward, new Vector3Int(0, 0, 1)) || somethingMoved;
 
             List<Piece> piecesRight = piece.board.PushablePiecesInDirection(piece, Direction.Right);
-            piece.board.MovePieces(piecesRight, new Vector3Int(-1, 0, 0));
-
+            somethingMoved = piece.board.MovePieces(piecesRight, new Vector3Int(-1, 0, 0)) || somethingMoved;
 
             List<Piece> piecesLeft = piece.board.PushablePiecesInDirection(piece, Direction.Left);
-            piece.board.MovePieces(piecesLeft, new Vector3Int(1, 0, 0));
+            somethingMoved = piece.board.MovePieces(piecesLeft, new Vector3Int(1, 0, 0)) || somethingMoved;
 
-            if (actionCounter)
+            if (actionCounter && somethingMoved)
             {
                 actionCounter.IncrementActions();
             }
         }
         else if (canMove && (Input.GetKeyDown(KeyCode.E)))
         {
+            bool somethingMoved = false;
 
             List<Piece> piecesForward = piece.board.PushablePiecesInDirection(piece, Direction.Forward);
-            piece.board.MovePieces(piecesForward, new Vector3Int(0, 0, 1));
+            somethingMoved = piece.board.MovePieces(piecesForward, new Vector3Int(0, 0, 1)) || somethingMoved;
 
             List<Piece> piecesBackward = piece.board.PushablePiecesInDirection(piece, Direction.Backward);
-            piece.board.MovePieces(piecesBackward, new Vector3Int(0, 0, -1));
-
+            somethingMoved = piece.board.MovePieces(piecesBackward, new Vector3Int(0, 0, -1)) || somethingMoved;
 
             List<Piece> piecesRight = piece.board.PushablePiecesInDirection(piece, Direction.Right);
-            piece.board.MovePieces(piecesRight, new Vector3Int(1, 0, 0));
+            somethingMoved = piece.board.MovePieces(piecesRight, new Vector3Int(1, 0, 0)) || somethingMoved;
 
             List<Piece> piecesLeft = piece.board.PushablePiecesInDirection(piece, Direction.Left);
-            piece.board.MovePieces(piecesLeft, new Vector3Int(-1, 0, 0));
-            if (actionCounter)
+            somethingMoved = piece.board.MovePieces(piecesLeft, new Vector3Int(-1, 0, 0)) || somethingMoved;
+
+            if (actionCounter && somethingMoved)
             {
                 actionCounter.IncrementActions();
             }

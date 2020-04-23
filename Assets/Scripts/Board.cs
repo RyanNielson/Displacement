@@ -76,8 +76,9 @@ public class Board : MonoBehaviour
         return false;
     }
 
-    public void MovePieces(List<Piece> groupedPieces, Vector3Int amount)
+    public bool MovePieces(List<Piece> groupedPieces, Vector3Int amount)
     {
+        bool somethingMoved = false;
         bool movedDuringIteration = true;
         while (movedDuringIteration && groupedPieces.Count != 0)
         {
@@ -91,9 +92,12 @@ public class Board : MonoBehaviour
                 {
                     groupedPieces.RemoveAt(i);
                     movedDuringIteration = true;
+                    somethingMoved = true;
                 }
             }
         }
+
+        return somethingMoved;
     }
 
     public List<Piece> PushablePiecesInDirection(Piece piece, Direction direction)
